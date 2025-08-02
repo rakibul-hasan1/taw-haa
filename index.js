@@ -89,3 +89,23 @@ window.addEventListener("DOMContentLoaded", function() {
     });
     eventContainer.innerHTML = displayItems.join("");
 });
+
+// scroll to top 
+const scrollBtn = document.querySelector(".scroll-top");
+
+window.addEventListener("scroll", function() {
+   const scrollHeight = this.window.pageYOffset;
+   
+   if(scrollHeight > 300) {
+    scrollBtn.classList.add("show-scroll");
+   }else {
+    scrollBtn.classList.remove("show-scroll");
+   }
+});
+
+scrollBtn.addEventListener("click", function() {
+    window.scrollTo({
+        top: 0,
+        behavior: "smooth",
+    })
+})

@@ -414,6 +414,41 @@ footer {
     }
 }
 
+/* scroll to top  */
+.scroll-top {
+    position: fixed;
+    right: 32px;
+    bottom: 20px;
+    width: 40px;
+    height: 40px;
+    background: #939495;
+    opacity: .8;
+    border-radius: 2px;
+    display: none;
+    transition: all 0.7s linear;
+    
+    & i {
+        height: 100%;
+        font-size: 1.5rem;
+        font-weight: 800;
+        color: #fff;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        cursor: pointer;
+        transition: all 0.3s linear;
+
+        &:hover {
+            background-color: #000;
+        }
+    }
+}
+
+.show-scroll {
+    display: block;
+    transition: all 0.7s linear;
+}
+
 @media screen and (max-width: 768px){
     .header-content a img {
         width: 200px;
