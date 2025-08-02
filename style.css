@@ -11,10 +11,11 @@
 }
 
 header {
+    padding: 0 50px;
     width: 100%;
 }
 .container {
-    width: 1140px;    
+    max-width: 1140px;    
     margin: auto;
 }
 
@@ -26,6 +27,12 @@ header {
 }
 
 .header-content img {
+    cursor: pointer;
+}
+
+.menu-toggle {
+    display: none;
+    font-size: 1.5rem;
     cursor: pointer;
 }
 
@@ -132,6 +139,7 @@ nav ul li:hover .dropdown {
     border: 1px solid #111;
     display: flex;
     flex-direction: column;
+    flex-wrap: wrap;
     justify-content: center;
     align-items: center;
     padding: 10px;
@@ -374,4 +382,86 @@ footer {
 
 .links ul li a:hover {
     opacity: 0.8;
+}
+
+/* responsive design  */
+
+@media screen and (max-width: 1024px) {
+    .menu-toggle {
+        display: block;
+    }
+  
+    .header-content a img {
+        width: 250px;
+    }
+
+    nav {
+        display: none;
+    }
+
+    
+    .items {
+        padding: 0 5rem;
+        grid-template-columns: 1fr 1fr;
+        gap: 20px;
+    }
+
+   .event-items {
+    display: grid;
+    gap: 20px;
+    grid-template-columns: 1fr 1fr;
+    padding: 0px 5rem 50px 5rem;
+    }
+}
+
+@media screen and (max-width: 768px){
+    .header-content a img {
+        width: 200px;
+    }
+    
+    .items {
+        padding: 0 2rem;
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+   .event-items {
+        display: grid;
+        gap: 20px;
+        grid-template-columns: 1fr;
+        padding: 0px 2rem 50px 2rem;
+    }
+
+    .footer-content {
+        flex-direction: column;
+        align-items: end;
+    }
+    .footer-menu {
+        text-align: end;
+        margin-right: 20px;
+        margin-top: 20px;
+    }
+    .links {
+        margin-right: 120px;
+    }
+    .footer-info {
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+        align-items: center;
+    }
+
+    .achievement-content {
+        flex-direction: column;
+    }
+    .instructor-content {
+        flex-direction: column;
+        padding: 10px 30px 30px 20px;
+         & img {
+            position: relative;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80%;
+        }
+    }
 }
